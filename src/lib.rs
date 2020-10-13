@@ -1,10 +1,21 @@
 #![no_std]
+#![forbid(unsafe_code)]
 
 /*!
+[![github]](https://github.com/steffahn/transitive_from)
+[![crates.io]](https://crates.io/crates/transitive_from)
+[![MIT / Apache 2.0 licensed]](https://github.com/steffahn/transitive_from#License)
+[![unsafe forbidden]](https://github.com/rust-secure-code/safety-dance/)
+
 Helper macros for creating hierarchies of transitive [`From`] implementations.
 
 Currently, this crate only consists of the [`transitive_from::hierarchy`](hierarchy) macro.
 
+[github]: https://img.shields.io/badge/github-steffahn/transitive__from-yellowgreen.svg
+[crates.io]: https://img.shields.io/crates/v/transitive_from.svg
+[MIT / Apache 2.0 licensed]: https://img.shields.io/crates/l/replace_with.svg
+[docs.rs]: https://docs.rs/transitive_from/badge.svg
+[unsafe forbidden]: https://img.shields.io/badge/unsafe-forbidden-success.svg
 */
 
 
@@ -12,7 +23,7 @@ Currently, this crate only consists of the [`transitive_from::hierarchy`](hierar
 Helper macro to create transitive [`From`] implementations.
 
 This macro can work on tree-shaped hierarchies of
-implementations `From<Child> for Parent` along the tree edges.
+implementations `impl From<Child> for Parent` along the tree edges.
 It will produce new `From` implementations along paths towards
 the root by chaining [`From::from()`] calls along the edges.
 There must not be any pre-existing `impl From`s for anything but
@@ -20,9 +31,10 @@ the immediate edges.
 
 For further details, study the example below.
 
-The syntax supports arbitrary type expressions where the example just uses simple names like `A`, `B`, `C`, etc; the macro does
-however not produce any generic implementations. Trailing
-commas at the end of each `{ }` block are optional.
+The syntax supports arbitrary type expressions where the example just
+uses simple names like `A`, `B`, `C`, etc; the macro does
+however not produce any generic implementations. Inside of each `{` `}`
+block, a trailing comma is optional.
 
 # Examples
 ```
@@ -74,7 +86,7 @@ impl_From!(<K> for F);
 impl_From!(<L> for I);
 
 
-// to produce all the remaining (transitive) edges
+// to produce all the remaining (transitive) impls
 // call the macro like this
 transitive_from::hierarchy! {
     A {

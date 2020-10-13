@@ -12,7 +12,6 @@ documentation = "https://docs.rs/transitive_from"
 keywords = ["derive", "From"]
 categories = ["rust-patterns", "no-std"]
 readme = "README.md"
-exclude = [".gitignore"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
