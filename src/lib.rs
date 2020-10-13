@@ -1,23 +1,20 @@
 #![no_std]
 #![forbid(unsafe_code)]
 
-/*!
-[![crates.io]](https://crates.io/crates/transitive_from)
-[![github]](https://github.com/steffahn/transitive_from)
-[![MIT / Apache 2.0 licensed]](https://github.com/steffahn/transitive_from#License)
-[![unsafe forbidden]](https://github.com/rust-secure-code/safety-dance/)
-
-Helper macros for creating hierarchies of transitive [`From`] implementations.
-
-Currently, this crate only consists of the [`transitive_from::hierarchy`](hierarchy) macro.
-
-[github]: https://img.shields.io/badge/github-steffahn/transitive__from-yellowgreen.svg
-[crates.io]: https://img.shields.io/crates/v/transitive_from.svg
-[MIT / Apache 2.0 licensed]: https://img.shields.io/crates/l/replace_with.svg
-[docs.rs]: https://docs.rs/transitive_from/badge.svg
-[unsafe forbidden]: https://img.shields.io/badge/unsafe-forbidden-success.svg
-*/
-
+//! [![crates.io]](https://crates.io/crates/transitive_from)
+//! [![github]](https://github.com/steffahn/transitive_from)
+//! [![MIT / Apache 2.0 licensed]](https://github.com/steffahn/transitive_from#License)
+//! [![unsafe forbidden]](https://github.com/rust-secure-code/safety-dance/)
+//!
+//! Helper macros for creating hierarchies of transitive [`From`] implementations.
+//!
+//! Currently, this crate only consists of the [`transitive_from::hierarchy`](hierarchy) macro.
+//!
+//! [github]: https://img.shields.io/badge/github-steffahn/transitive__from-yellowgreen.svg
+//! [crates.io]: https://img.shields.io/crates/v/transitive_from.svg
+//! [MIT / Apache 2.0 licensed]: https://img.shields.io/crates/l/replace_with.svg
+//! [docs.rs]: https://docs.rs/transitive_from/badge.svg
+//! [unsafe forbidden]: https://img.shields.io/badge/unsafe-forbidden-success.svg
 
 /**
 Helper macro to create transitive [`From`] implementations.
