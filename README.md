@@ -1,5 +1,12 @@
-# transitive_from &emsp; [![docs.rs]](https://docs.rs/transitive_from) [![crates.io]](https://crates.io/crates/transitive_from)  [![MIT / Apache 2.0 licensed]](#License) [![unsafe forbidden]](https://github.com/rust-secure-code/safety-dance/)
+# transitive_from &emsp;
 
+[![docs.rs]](https://docs.rs/transitive_from)
+[![crates.io]](https://crates.io/crates/transitive_from)
+[![github]](https://github.com/steffahn/transitive_from)
+[![MIT / Apache 2.0 licensed]](#License)
+[![unsafe forbidden]](https://github.com/rust-secure-code/safety-dance/)
+
+[github]: https://img.shields.io/badge/github-steffahn/transitive__from-yellowgreen.svg
 [crates.io]: https://img.shields.io/crates/v/transitive_from.svg
 [MIT / Apache 2.0 licensed]: https://img.shields.io/crates/l/transitive_from.svg
 [docs.rs]: https://docs.rs/transitive_from/badge.svg

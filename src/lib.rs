@@ -2,8 +2,8 @@
 #![forbid(unsafe_code)]
 
 /*!
-[![github]](https://github.com/steffahn/transitive_from)
 [![crates.io]](https://crates.io/crates/transitive_from)
+[![github]](https://github.com/steffahn/transitive_from)
 [![MIT / Apache 2.0 licensed]](https://github.com/steffahn/transitive_from#License)
 [![unsafe forbidden]](https://github.com/rust-secure-code/safety-dance/)
 
