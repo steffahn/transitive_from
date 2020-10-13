@@ -1,4 +1,4 @@
-# transitive_from &emsp;
+# transitive_from
 
 [![docs.rs]](https://docs.rs/transitive_from)
 [![crates.io]](https://crates.io/crates/transitive_from)
