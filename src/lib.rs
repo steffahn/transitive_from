@@ -38,13 +38,15 @@ block, a trailing comma is optional.
 /*
     sketch of a hierarchy of e.g. error types
 
-    A + B + E
-        |   + F + J
-        |       + K
-        + C - G
-        |
-        + D + H
-            + I - L
+             ┌─ E
+       ┌─ B ─┤     ┌─ J
+       │     └─ F ─┤
+       │           └─ K
+    A ─┼─ C ─── G
+       │
+       │     ┌─ H
+       └─ D ─┤
+             └─ I ─── L
 */
 
 struct A;
