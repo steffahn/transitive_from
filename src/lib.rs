@@ -35,20 +35,21 @@ block, a trailing comma is optional.
 
 # Examples
 ```
-/*
-    sketch of a hierarchy of e.g. error types
-
-             ┌─ E
-       ┌─ B ─┤     ┌─ J
-       │     └─ F ─┤
-       │           └─ K
-    A ─┼─ C ─── G
-       │
-       │     ┌─ H
-       └─ D ─┤
-             └─ I ─── L
-*/
-
+// Here’s a drawing of an example hierarchy.
+//
+//            ┌─ E
+//      ┌─ B ─┤     ┌─ J
+//      │     └─ F ─┤
+//      │           └─ K
+//   A ─┼─ C ─── G
+//      │
+//      │     ┌─ H
+//      └─ D ─┤
+//            └─ I ─── L
+//
+// For example, all these types could be error types and we
+// would like to fully support upcasting with the `?` operator
+// from anywhere to anywhere in this hierarchy.
 struct A;
 struct B;
 struct C;
@@ -62,9 +63,12 @@ struct J;
 struct K;
 struct L;
 
-// manual implementation along the tree edges
+// We need to provide implementation for all the tree edges
+// (all the immediate "child -> parent" steps) manually,
+// or by some other means. In this example we use a small macro
+// to save some boilerplate.
 macro_rules! impl_From {
-    (<$B:ty> for $A:ident) => {
+    (<$B:ident> for $A:ident) => {
         impl From<$B> for $A {
             fn from(_: $B) -> $A {
                 $A
@@ -84,9 +88,8 @@ impl_From!(<J> for F);
 impl_From!(<K> for F);
 impl_From!(<L> for I);
 
-
-// to produce all the remaining (transitive) impls
-// call the macro like this
+// Now, to produce all the remaining (transitive) implementations
+// and compling the hierarchy, call the macro like this:
 transitive_from::hierarchy! {
     A {
         B {
@@ -100,15 +103,14 @@ transitive_from::hierarchy! {
         },
     }
 }
+// Note how the syntax resembles the tree drawn at the top of this example.
 
-// example use
-fn conversions() {
-    A::from(K);
-    A::from(E);
-    B::from(K);
-    D::from(L);
-    A::from(L);
-}
+// Finally, a few demonstration/test cases:
+A::from(K);
+A::from(E);
+B::from(K);
+D::from(L);
+A::from(L);
 ```
 */
 #[macro_export]
@@ -116,19 +118,19 @@ macro_rules! hierarchy {
 
     ($($root:ty $({
         $($child:ty $({
-            $($grandchild:tt)*
+            $($grandchildren_parsed_recursively:tt)*
         })?),* $(,)?
     })?),* $(,)?) => {
         $($(
             $crate::hierarchy!{
                 $($child $({
-                    $($grandchild)*
+                    $($grandchildren_parsed_recursively)*
                 })?),*
             }
             $($(
                 $crate::__hierarchy_internals!{
                     [$root][$child][
-                        $($grandchild)*
+                        $($grandchildren_parsed_recursively)*
                     ]
                 }
             )?)*
