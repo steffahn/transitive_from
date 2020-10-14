@@ -8,7 +8,8 @@
 //!
 //! Helper macros for creating hierarchies of transitive [`From`] implementations.
 //!
-//! Currently, this crate only consists of the [`transitive_from::hierarchy`](hierarchy) macro.
+//! Currently, this crate only consists of the [`transitive_from::hierarchy`](hierarchy) macro.  
+//! Please use the link to go to its page for further documentation.
 //!
 //! [github]: https://img.shields.io/badge/github-steffahn/transitive__from-yellowgreen.svg
 //! [crates.io]: https://img.shields.io/crates/v/transitive_from.svg

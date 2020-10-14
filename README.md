@@ -15,7 +15,8 @@
 
 Helper macros for creating hierarchies of transitive `From` implementations.
 
-Currently, this crate only consists of the [`transitive_from::hierarchy`](https://docs.rs/transitive_from/0.1/transitive_from/macro.hierarchy.html) macro.
+Currently, this crate only consists of the [`transitive_from::hierarchy`](https://docs.rs/transitive_from/0.1/transitive_from/macro.hierarchy.html) macro.  
+Please use the link to go to its page for further documentation.
 
 ## License
 Licensed under either of
@@ -25,4 +26,6 @@ Licensed under either of
 
 at your option.
 
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in
+the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without
+any additional terms or conditions.
