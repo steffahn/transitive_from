@@ -90,7 +90,7 @@ impl_From!(<K> for F);
 impl_From!(<L> for I);
 
 // Now, to produce all the remaining (transitive) implementations
-// and compling the hierarchy, call the macro like this:
+// and complete the hierarchy, call the macro like this:
 transitive_from::hierarchy! {
     A {
         B {

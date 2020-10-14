@@ -1,6 +1,6 @@
 [package]
 name = "transitive_from"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Frank Steffahn <fdsteffahn@gmail.com>"]
 license = "MIT OR Apache-2.0"
 description = """
